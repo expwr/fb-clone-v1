@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     },
     username: {
         type: String,
-        required: [true, 'Usernameis required!'],
+        required: [true, 'Username is required!'],
         trim: true,
         text: true,
         unique: true,
@@ -111,7 +111,7 @@ const userSchema = new mongoose.Schema({
         },
         relationship: {
             type: String,
-            enum: ['Single', 'In a relationship', 'Marrried', 'Divorced'],
+            enum: ['Single', 'In a relationship', 'Married', 'Divorced'],
         },
         instagram: {
             type: String,
