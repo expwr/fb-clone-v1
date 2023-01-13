@@ -244,10 +244,40 @@
     max-width: 900px;
 }
 
+/* dob and gender errors */
+.reg_grid .input_error {
+    width: 300px;
+    position: absolute;
+    top: 70px;
+}
+
+/* error and success styles */
+.error_text {
+    color: #b94a48;
+}
+
+.success_text {
+    color: var(--green-color);
+}
+
 /* media queries */
 @media (min-width: 539px) {
     .login_footer_wrap {
         max-width: 520px;
+    }
+    .register {
+        width: 400px;
+    }
+    .reg_line {
+        flex-direction: row;
+    }
+    .reg_grid select,
+    .reg_grid label {
+        width: 90px;
+    }
+
+    .reg_grid .input_error {
+        width: 350px;
     }
 }
 
@@ -257,7 +287,7 @@
     }
 }
 
-@media (min-width: 850px) {
+@media (min-width: 9950px) {
     .login_wrap {
         display: flex;
         align-items: center;
