@@ -24,15 +24,12 @@ export default function Footer() {
         <Link to="/">Sign Up</Link>
         <Link to="/">Log in</Link>
         <Link to="/">Messenger</Link>
-        <Link to="/">Facebook Lite</Link>
+        <Link to="/">Intwine Lite</Link>
         <Link to="/">Watch</Link>
         <Link to="/">Places</Link>
         <Link to="/">Games</Link>
         <Link to="/">Marketplace</Link>
-        <Link to="/">Facebook Pay</Link>
-        <Link to="/">Oculus</Link>
-        <Link to="/">Portal</Link>
-        <Link to="/">Instagram</Link>
+        <Link to="/">Intwine Pay</Link>
         <Link to="/">Bulletin</Link>
         <Link to="/">Local</Link>
         <Link to="/">Fundraisers</Link>
