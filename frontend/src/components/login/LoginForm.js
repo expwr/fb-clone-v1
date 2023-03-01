@@ -1,7 +1,7 @@
 import { Formik, Form } from "formik";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
-import LoginInput from "../../components/inputs/loginInput/";
+import LoginInput from "../../components/inputs/loginInput";
 import { useState } from "react";
 import DotLoader from "react-spinners/DotLoader";
 import axios from "axios";
@@ -51,9 +51,9 @@ export default function LoginForm({ setVisible }) {
   return (
     <div className="login_wrap">
       <div className="login_1">
-        <img src="../../icons/facebook.svg" alt="" />
+        {/* <img src="../../icons/facebook.svg" alt="" /> */}
         <span>
-          Facebook helps you connect and share with the people in your life.
+          Intwine helps you connect and share with the people in your life.
         </span>
       </div>
       <div className="login_2">
@@ -74,7 +74,7 @@ export default function LoginForm({ setVisible }) {
                 <LoginInput
                   type="text"
                   name="email"
-                  placeholder="Email address or phone number"
+                  placeholder="Enter email address"
                   onChange={handleLoginChange}
                 />
                 <LoginInput
