@@ -13,7 +13,11 @@ app.use(cors());
 
 
 
+<<<<<<< HEAD
 // routes
+=======
+// routes to nav
+>>>>>>> bd4e14c587fddaee58f10b2499ea809ad9c53420
 readdirSync('./routes').map((r) => app.use('/', require('./routes/' + r)));
 
 

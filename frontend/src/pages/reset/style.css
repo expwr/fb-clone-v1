@@ -101,8 +101,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   float: right;
   margin-left: 500px;
+=======
+>>>>>>> bd4e14c587fddaee58f10b2499ea809ad9c53420
 }
 .reset_right img {
   width: 80px;
