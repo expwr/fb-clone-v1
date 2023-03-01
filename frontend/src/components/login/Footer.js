@@ -30,7 +30,10 @@ export default function Footer() {
         <Link to="/">Games</Link>
         <Link to="/">Marketplace</Link>
         <Link to="/">Intwine Pay</Link>
+<<<<<<< HEAD
         <Link to="/">Portal</Link>
+=======
+>>>>>>> bd4e14c587fddaee58f10b2499ea809ad9c53420
         <Link to="/">Bulletin</Link>
         <Link to="/">Local</Link>
         <Link to="/">Fundraisers</Link>
