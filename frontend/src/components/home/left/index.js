@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { ArrowDown1 } from "../../../svg";
 import { useState } from "react";
 import Shortcut from "./Shortcut";
+
 export default function LeftHome({ user }) {
   const [visible, setVisible] = useState(false);
   return (
@@ -17,7 +18,7 @@ export default function LeftHome({ user }) {
       </Link>
       {left.slice(0, 8).map((link, i) => (
         <LeftLink
-          key={i}
+          key={i} 
           img={link.img}
           text={link.text}
           notification={link.notification}
