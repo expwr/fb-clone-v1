@@ -21,11 +21,7 @@ export default function ChangePassword({
       .required(
         "Enter a combination of at least six numbers,letters and punctuation marks(such as ! and &)."
       )
-
       .min(6, "Password must be at least 6 characters.")
-
-      .min(6, "Password must be atleast 6 characters.")
-
       .max(36, "Password can't be more than 36 characters"),
 
     conf_password: Yup.string()

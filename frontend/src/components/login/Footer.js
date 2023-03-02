@@ -31,6 +31,10 @@ export default function Footer() {
         <Link to="/">Marketplace</Link>
         <Link to="/">Intwine Pay</Link>
 
+
+        <Link to="/">Portal</Link>
+
+
         <Link to="/">Portal</Link>
 
         <Link to="/">Bulletin</Link>
