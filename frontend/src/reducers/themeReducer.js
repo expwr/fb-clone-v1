@@ -1,19 +1,16 @@
 import Cookies from "js-cookie";
 
-export function themeReducer(
-  state = Cookies.get("darkTheme")
-    ? JSON.parse(Cookies.get("darkTheme"))
-    : false,
+export function themeReducer( // for setting theme
+  state = Cookies.get("darkTheme") ? JSON.parse(Cookies.get("darkTheme")) : false, // if darkthem in cookies (true) state = darktheme else false
 
-  action
+  action // used below
 ) {
-  switch (action.type) {
+  switch (action.type) {  // set comparisons to the type of action
     case "DARK":
-      return true;
+      return true;        // if dark set true
     case "LIGHT":
-      return false;
-
+      return false;       // if light set false
     default:
-      return state;
+      return state;       // else (shouldnt happen) return state
   }
 }

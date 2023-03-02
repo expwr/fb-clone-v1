@@ -1,3 +1,4 @@
+// imports
 import { Routes, Route } from "react-router-dom";
 import Login from "./pages/login";
 import Profile from "./pages/profile";
@@ -13,41 +14,43 @@ import axios from "axios";
 import { postsReducer } from "./functions/reducers";
 import Friends from "./pages/friends";
 
+// app element 
 function App() {
-  const [visible, setVisible] = useState(false);
-  const { user, darkTheme } = useSelector((state) => ({ ...state }));
-  const [{ loading, error, posts }, dispatch] = useReducer(postsReducer, {
+  const [visible, setVisible] = useState(false);                            // visiblity
+  const { user, darkTheme } = useSelector((state) => ({ ...state }));       // theme
+  const [{ loading, error, posts }, dispatch] = useReducer(postsReducer, {  // status and posts, and disbatch function
     loading: false,
     posts: [],
     error: "",
   });
-  useEffect(() => {
+  useEffect(() => {                             // syncronize component getting posts
     getAllPosts();
   }, []);
-  const getAllPosts = async () => {
-    try {
+  const getAllPosts = async () => {             // getting all posts
+    try {                                       // atempt
       dispatch({
-        type: "POSTS_REQUEST",
+        type: "POSTS_REQUEST",                  // request posts
       });
       const { data } = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/getAllposts`,
+        `${process.env.REACT_APP_BACKEND_URL}/getAllposts`,   //set backend url
         {
           headers: {
-            Authorization: `Bearer ${user.token}`,
+            Authorization: `Bearer ${user.token}`,            //asign user auth
           },
         }
       );
       dispatch({
-        type: "POSTS_SUCCESS",
-        payload: data,
+        type: "POSTS_SUCCESS",        // if got this far then success
+        payload: data,                // return data
       });
-    } catch (error) {
+    } catch (error) {                 // if error
       dispatch({
-        type: "POSTS_ERROR",
-        payload: error.response.data.message,
+        type: "POSTS_ERROR",          // if error, then tell dispatch
+        payload: error.response.data.message, // return error msg
       });
     }
   };
+  // html
   return (
     <div className={darkTheme && "dark"}>
       {visible && (
