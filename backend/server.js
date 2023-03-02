@@ -14,14 +14,7 @@ app.use(cors());
 
 
 
-
 // routes
-
-// routes to nav
-
-
-// routes
-
 // routes to nav
 
 readdirSync('./routes').map((r) => app.use('/', require('./routes/' + r)));
