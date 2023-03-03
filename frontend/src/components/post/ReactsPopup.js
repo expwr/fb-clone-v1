@@ -1,30 +1,31 @@
 import { useState } from "react";
 import { reactPost } from "../../functions/post";
 import { useSelector } from "react-redux";
+
 const reactsArray = [
   {
     name: "like",
-    image: "../../../reacts/like.gif",
+    image: "../../assets/reacts/like.gif",
   },
   {
     name: "love",
-    image: "../../../reacts/love.gif",
+    image: "../../assets/reacts/love.gif",
   },
   {
     name: "haha",
-    image: "../../../reacts/haha.gif",
+    image: "../../assets/reacts/haha.gif",
   },
   {
     name: "wow",
-    image: "../../../reacts/wow.gif",
+    image: "../../assets/reacts/wow.gif",
   },
   {
     name: "sad",
-    image: "../../../reacts/sad.gif",
+    image: "../../assets/reacts/sad.gif",
   },
   {
     name: "angry",
-    image: "../../../reacts/angry.gif",
+    image: "../../assets/reacts/angry.gif",
   },
 ];
 
@@ -51,7 +52,7 @@ export default function ReactsPopup({ visible, setVisible, reactHandler }) {
               key={i}
               onClick={() => reactHandler(react.name)}
             >
-              <img src={react.image} alt="" />
+              <img src={require(react.image)} alt="" />
             </div>
           ))}
         </div>
