@@ -8,6 +8,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import logo from "../../assets/icons/Intwine-Logo-Full.png"
 
 const loginInfos = {
   email: "",
@@ -52,7 +53,7 @@ export default function LoginForm({ setVisible }) {
   return (
     <div className="login_wrap">
       <div className="login_1">
-        <img src="../../icons/facebook.svg" alt="" />
+        <img src={logo} alt="" id="Login-Logo"/>
         <span>
           Intwine helps you connect and share with the people in your life.
         </span>

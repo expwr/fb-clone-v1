@@ -14,6 +14,13 @@
   .login_1 span {
     font-size: 20px;
   }
+
+  .login_1 #Login-Logo{
+    width: 100%;
+    height: 100%;
+    margin-bottom: -5%;
+  }
+
   .login_2 {
     text-align: center;
   }
