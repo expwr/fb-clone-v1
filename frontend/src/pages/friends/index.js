@@ -6,10 +6,13 @@ import { friendspage } from "../../functions/reducers";
 import { getFriendsPageInfos } from "../../functions/user";
 import Card from "./Card";
 import "./style.css";
-export default function Friends() {
-  const { user } = useSelector((state) => ({ ...state }));
-  const { type } = useParams();
 
+// runs when goto route friends
+export default function Friends() {
+  const { user } = useSelector((state) => ({ ...state })); // set user to function w/ param state w/ all of its contents
+  const { type } = useParams(); // set type 2 useParams fn
+
+  // empty data, error, and loading
   const [{ loading, error, data }, dispatch] = useReducer(friendspage, {
     loading: false,
     data: {},
@@ -28,6 +31,7 @@ export default function Friends() {
     }
   };
 
+  // html
   return (
     <>
       <Header page="friends" />

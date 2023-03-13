@@ -6,37 +6,33 @@ import {
   deleteRequest,
 } from "../../functions/user";
 
-export default function Card({ userr, type, getData }) {
-  const { user } = useSelector((state) => ({ ...state }));
-  const cancelRequestHandler = async (userId) => {
-    const res = await cancelRequest(userId, user.token);
+// card for list of friend
+export default function Card({ userr, type, getData }) {        // params: str, str, function
+  const { user } = useSelector((state) => ({ ...state }));      // set user to function of all states vals
+
+  const cancelRequestHandler = async (userId) => {              // async function w/ userid param
+    const res = await cancelRequest(userId, user.token);        // set res to the fn cancel req that rms the req
     if (res == "ok") {
-      getData();
+      getData();                                                // if not fail, run getData fn
     }
   };
 
   const confirmHandler = async (userId) => {
-    const res = await acceptRequest(userId, user.token);
+    const res = await acceptRequest(userId, user.token);        // set res to accept accept function
     if (res == "ok") {
-      getData();
+      getData();                                                // if not fail, run getData fn
     }
   };
-
-
-
-
-
-
-
 
 
   const deleteHandler = async (userId) => {
-    const res = await deleteRequest(userId, user.token);
+    const res = await deleteRequest(userId, user.token);        // set res to accept del function
     if (res == "ok") {
-      getData();
+      getData();                                                // if not fail, run getData fn
     }
   };
   
+  // hmtl
   return (
     <div className="req_card">
       <Link to={`/profile/${userr.username}`}>
