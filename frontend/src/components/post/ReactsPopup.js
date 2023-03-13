@@ -5,27 +5,27 @@ import { useSelector } from "react-redux";
 const reactsArray = [
   {
     name: "like",
-    image: "../../assets/reacts/like.gif",
+    image: "/public/reacts/like.gif",
   },
   {
     name: "love",
-    image: "../../assets/reacts/love.gif",
+    image: "/public/reacts/love.gif",
   },
   {
     name: "haha",
-    image: "../../assets/reacts/haha.gif",
+    image: "/public/reacts/haha.gif",
   },
   {
     name: "wow",
-    image: "../../assets/reacts/wow.gif",
+    image: "/public/reacts/wow.gif",
   },
   {
     name: "sad",
-    image: "../../assets/reacts/sad.gif",
+    image: "/public/reacts/sad.gif",
   },
   {
     name: "angry",
-    image: "../../assets/reacts/angry.gif",
+    image: "/public/reacts/angry.gif",
   },
 ];
 
@@ -52,7 +52,7 @@ export default function ReactsPopup({ visible, setVisible, reactHandler }) {
               key={i}
               onClick={() => reactHandler(react.name)}
             >
-              <img src={require(react.image)} alt="" />
+              <img src={react.image} alt="reaction" />
             </div>
           ))}
         </div>

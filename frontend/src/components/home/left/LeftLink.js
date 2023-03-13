@@ -1,7 +1,7 @@
 export default function LeftLink({ img, text, notification }) {
   return (
     <div className="left_link hover2">
-      <img src={require(`../../../assets/left/${img}.png`)} alt="" />
+      <img src={require(`/public/left/${img}.png`)} alt="" />
       {notification !== undefined ? (
         <div className="col">
           <div className="col_1">{text}</div>
