@@ -1,22 +1,35 @@
 import axios from "axios";
+
+/*
+  user actions related to...
+  following,
+  profile,
+  Friends,
+  Searches
+*/
+
+// changing profile pic w/ url as data and token for auth
 export const updateprofilePicture = async (url, token) => {
   try {
     const { data } = await axios.put(
-      `${process.env.REACT_APP_BACKEND_URL}/updateProfilePicture`,
+      `${process.env.REACT_APP_BACKEND_URL}/updateProfilePicture`, // backend url
       {
-        url,
+        url,                                                       // profile url
       },
       {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,                        // auth token
         },
       }
     );
+    // return msg if no error
     return "ok";
   } catch (error) {
+    // returning the error msg
     return error.response.data.message;
   }
 };
+// same format as profile picture updating exept backend url
 export const updateCover = async (url, token) => {
   try {
     const { data } = await axios.put(
@@ -35,11 +48,12 @@ export const updateCover = async (url, token) => {
     return error.response.data.message;
   }
 };
+// same format as profile picture updating exept backend url variying by id and no url
 export const addFriend = async (id, token) => {
   try {
     const { data } = await axios.put(
-      `${process.env.REACT_APP_BACKEND_URL}/addFriend/${id}`,
-      {},
+      `${process.env.REACT_APP_BACKEND_URL}/addFriend/${id}`,   // backend url w/ the param id in url
+      {},                                                       // no content
 
       {
         headers: {
@@ -52,6 +66,7 @@ export const addFriend = async (id, token) => {
     return error.response.data.message;
   }
 };
+// same format as addFriend w/ a slightly diffrent backend url
 export const cancelRequest = async (id, token) => {
   try {
     const { data } = await axios.put(
@@ -69,6 +84,7 @@ export const cancelRequest = async (id, token) => {
     return error.response.data.message;
   }
 };
+// same format as addFriend and cancelRequest w/ a slightly diffrent backend url
 export const follow = async (id, token) => {
   try {
     const { data } = await axios.put(
@@ -87,6 +103,7 @@ export const follow = async (id, token) => {
     return error.response.data.message;
   }
 };
+// same format as addFriend, cancelRequest and follow w/ a slightly diffrent backend url
 export const unfollow = async (id, token) => {
   try {
     const { data } = await axios.put(
@@ -104,6 +121,7 @@ export const unfollow = async (id, token) => {
     return error.response.data.message;
   }
 };
+// same format as addFriend, cancelRequest, follow, and unfollow w/ a slightly diffrent backend url
 export const acceptRequest = async (id, token) => {
   try {
     const { data } = await axios.put(
@@ -121,6 +139,7 @@ export const acceptRequest = async (id, token) => {
     return error.response.data.message;
   }
 };
+// same format as others w/ a slightly diffrent backend url
 export const unfriend = async (id, token) => {
   try {
     const { data } = await axios.put(
@@ -138,6 +157,7 @@ export const unfriend = async (id, token) => {
     return error.response.data.message;
   }
 };
+// same format as others w/ a slightly diffrent backend url
 export const deleteRequest = async (id, token) => {
   try {
     const { data } = await axios.put(
@@ -155,6 +175,8 @@ export const deleteRequest = async (id, token) => {
     return error.response.data.message;
   }
 };
+// same format as others w/ a slightly diffrent backend url 
+// and the param searchTerm in the place of id
 export const search = async (searchTerm, token) => {
   try {
     const { data } = await axios.post(
@@ -172,11 +194,13 @@ export const search = async (searchTerm, token) => {
     return error.response.data.message;
   }
 };
+// same format as others w/ a static backend url and
+// contents of the user (searchUser)
 export const addToSearchHistory = async (searchUser, token) => {
   try {
     const { data } = await axios.put(
-      `${process.env.REACT_APP_BACKEND_URL}/addToSearchHistory`,
-      { searchUser },
+      `${process.env.REACT_APP_BACKEND_URL}/addToSearchHistory`, // static url
+      { searchUser },                                            // contents
 
       {
         headers: {
@@ -189,6 +213,8 @@ export const addToSearchHistory = async (searchUser, token) => {
     return error.response.data.message;
   }
 };
+// same stucture as others execpt lack of contents, static backend url, and
+// only param being the auth token
 export const getSearchHistory = async (token) => {
   try {
     const { data } = await axios.get(
@@ -205,6 +231,7 @@ export const getSearchHistory = async (token) => {
     return error.response.data.message;
   }
 };
+// sane as addToSearchHistory except the name
 export const removeFromSearch = async (searchUser, token) => {
   try {
     const { data } = await axios.put(
@@ -222,11 +249,11 @@ export const removeFromSearch = async (searchUser, token) => {
     return error.response.data.message;
   }
 };
+// same as getSearchHistory except backend url and returns status
 export const getFriendsPageInfos = async (token) => {
   try {
     const { data } = await axios.get(
       `${process.env.REACT_APP_BACKEND_URL}/getFriendsPageInfos`,
-
       {
         headers: {
           Authorization: `Bearer ${token}`,

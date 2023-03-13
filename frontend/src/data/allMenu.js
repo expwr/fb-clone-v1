@@ -1,3 +1,6 @@
+
+// list of dicts containing the differing,
+// names, icons, and descriptions of each dict
 export const menu = [
   {
     name: "Campus",
@@ -120,6 +123,8 @@ export const menu = [
     description: "Let kids message with close friends and family.",
   },
 ];
+
+// same as above but no description and diffrent use
 export const create = [
   {
     name: "Post",

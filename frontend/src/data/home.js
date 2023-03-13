@@ -1,3 +1,6 @@
+
+// list of dicts for the icons on the left of the screen
+// w/ the content of text, img, and somtimes notifications 
 export const left = [
   {
     text: "Find friends",
@@ -110,6 +113,9 @@ export const left = [
     img: "weather",
   },
 ];
+
+// list of dicts for users stories conatinging, 
+// profile pics, users name, img of story
 export const stories = [
   {
     profile_picture: "../../stories/profile1.jpg",

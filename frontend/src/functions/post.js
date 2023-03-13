@@ -1,5 +1,13 @@
 import axios from "axios";
+
+/*
+communicating (post, read, wrtie, ect) w/ backend for posts
+*/
+
+// normal post
+// more or less same structure for every function
 export const createPost = async (
+  // params
   type,
   background,
   text,
@@ -8,8 +16,11 @@ export const createPost = async (
   token
 ) => {
   try {
+    // return message
     const { data } = await axios.post(
+      // backend routing
       `${process.env.REACT_APP_BACKEND_URL}/createPost`,
+      // contents of post
       {
         type,
         background,
@@ -17,17 +28,21 @@ export const createPost = async (
         images,
         user,
       },
+      // auth for post
       {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       }
     );
+    // if get this far return msg
     return { status: "ok", data };
   } catch (error) {
+    // else return error
     return error.response.data.message;
   }
 };
+// post w/o returning data but still sending w/ axios put
 export const reactPost = async (postId, react, token) => {
   try {
     const { data } = await axios.put(
@@ -47,6 +62,7 @@ export const reactPost = async (postId, react, token) => {
     return error.response.data.message;
   }
 };
+// return post data w/ postid and auth token
 export const getReacts = async (postId, token) => {
   try {
     const { data } = await axios.get(
@@ -63,6 +79,7 @@ export const getReacts = async (postId, token) => {
     return error.response.data.message;
   }
 };
+// send comment onto a msg w/ comment content and posts id
 export const comment = async (postId, comment, image, token) => {
   try {
     const { data } = await axios.put(
@@ -84,6 +101,7 @@ export const comment = async (postId, comment, image, token) => {
     return error.response.data.message;
   }
 };
+// commiting post to db
 export const savePost = async (postId, token) => {
   try {
     const { data } = await axios.put(
@@ -101,6 +119,7 @@ export const savePost = async (postId, token) => {
     return error.response.data.message;
   }
 };
+// rm post w/ postid and auth token
 export const deletePost = async (postId, token) => {
   try {
     const { data } = await axios.delete(
